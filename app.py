@@ -10,51 +10,115 @@ df = pd.read_csv(r"./diabetes.csv")
 # Header with professional theme
 st.markdown("""
     <style>
+        /* General Body Styling */
         body {
-            background-color: #f5f5f5;
+            background-color: #ffffff; /* Change to a lighter white */
+            font-family: 'Verdana', sans-serif;
+            color: #333333;
         }
+
+        /* Header Styling */
         .header {
-            font-size: 50px;
+            font-size: 48px;
             font-family: 'Verdana', sans-serif;
-            font-weight: bold;
+            font-weight: 600;
             text-align: center;
-            color: #0c4b33;
-            margin-bottom: 20px;
+            color: #00695c; /* Dark teal for a professional feel */
+            margin-bottom: 25px;
         }
+
         .sub-header {
-            font-size: 22px;
+            font-size: 20px;
             font-family: 'Verdana', sans-serif;
-            color: #4a7c59;
+            color: #004d40; /* Muted teal for contrast */
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
+
         .highlight {
-            font-size: 18px;
-            color: #0c4b33;
+            font-size: 20px;
+            color: #00695c; /* Match header color */
             font-weight: bold;
+            text-align: center;
         }
+
+        /* Section Dividers */
         hr {
             border: none;
-            border-top: 2px solid #8bc34a;
+            border-top: 2px solid #26a69a; /* Softer green tone */
+            margin: 20px 0;
         }
+
+        /* Sidebar Styling */
+        .sidebar .sidebar-content {
+            background-color: #f9f9f9; /* Neutral sidebar background */
+            padding: 15px;
+        }
+
+        .stSidebar {
+            background-color: #e3f2fd; /* Light blue for a calming look */
+            padding: 15px;
+            border-right: 1px solid #81d4fa; /* Subtle border */
+        }
+
+        /* Inputs Styling */
+        .stSidebar input, .stSidebar select, .stSidebar button {
+            border-radius: 8px;
+            border: 1px solid #bdbdbd;
+            padding: 10px;
+        }
+
+        /* Button Styles */
+        .stButton>button {
+            background-color: #00796b; /* Deep teal */
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .stButton>button:hover {
+            background-color: #004d40; /* Dark teal on hover */
+            transform: scale(1.05);
+        }
+
+        /* Prediction Result */
+        .highlight {
+            text-align: center;
+            font-size: 20px;
+            padding: 15px;
+            border: 1px solid #4caf50; /* Green border for emphasis */
+            border-radius: 8px;
+            background-color: #e8f5e9; /* Soft green background */
+            margin: 10px 0;
+        }
+
+        /* Table Styling */
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 90%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        th {
+            background-color: #00796b;
+            color: white;
+            text-align: center;
+        }
+
     </style>
-    <div class="header">🩺 Diabetes Risk Checker</div>
-    <div class="sub-header">Enter your health details to analyze your diabetes risk.</div>
-    <hr>
 """, unsafe_allow_html=True)
 
-# Sidebar inputs with a refined design
-st.sidebar.title("📝 Patient Information")
-st.sidebar.markdown("""
-    <style>
-        .sidebar .sidebar-content {
-            background-color: #f7f8f9;
-        }
-        .stSidebar {
-            background-color: #e1e5ea;
-        }
-    </style>
-""", unsafe_allow_html=True)
 
 st.sidebar.header("🔍 Enter Your Health Details:")
 
